@@ -2,8 +2,9 @@ library "CommonLibrary"
 
 node 
 {
-	stage("CloneProject") 
+	stage("UpdateProject") 
 	{
-		GitUtil.CloneProject(GlobalConfig.ProjectPath, GlobalConfig.ProjectUrl, "main");
+		echo ProjectConfig.ProjectName;
+		// GitUtil.CloneProject(GlobalConfig.ProjectPath, GlobalConfig.ProjectUrl, "main");
 	}
 }
