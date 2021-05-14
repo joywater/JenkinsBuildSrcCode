@@ -1,0 +1,36 @@
+library 'Common'
+pipeline {
+    agent any
+    parameters {
+        string(name: 'branch_name', defaultValue: 'dev_new', description: '分支名称')
+    }
+    stages {
+        stage('prepare') { 
+            steps {                
+                echo environment.Path_Project
+            }
+        }
+        stage('git pull') { 
+            steps { 
+                echo 'echo Build stage ...' 
+            }
+        }
+
+        stage('speedup') { 
+            steps { 
+                echo 'echo Build stage ...' 
+            }
+        }
+
+        stage('bundle'){
+            steps {
+                echo 'echo Test stage ...' 
+            }
+        }
+        stage('git commiy') {
+            steps {
+                echo 'echo Deploy stage ...' 
+            }
+        }
+    }
+  }
